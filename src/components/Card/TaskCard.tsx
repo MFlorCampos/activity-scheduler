@@ -1,26 +1,24 @@
-import Image from 'next/image';
-import { default as DeleteIcon } from '../../../public/delete.svg';
-import { default as EditIcon } from '../../../public/edit.svg';
-import './TaskCard.scss';
+import Image from "next/image";
+import { default as DeleteIcon } from "../../../public/delete.svg";
+import { default as EditIcon } from "../../../public/edit.svg";
+import "./TaskCard.scss";
 
 import {
   useSetActiveTask,
   useOpenModal,
   useSetModalOpen,
   useSetPitch,
-  useSetIsDelete,
-} from '@/contexts/hooks';
+  useSetRemove,
+} from "@/contexts/hooks";
 
 const TaskCard = (props: any) => {
   const { task, columnId } = props;
 
   const openModal = useOpenModal();
+
   const setModalOpen = useSetModalOpen();
-
-  const setIsDelete = useSetIsDelete();
-
+  const setRemove = useSetRemove();
   const setActivePitch = useSetPitch();
-
   const setActiveTask = useSetActiveTask();
 
   const handleClickEdit = (columnId: string) => {
@@ -30,7 +28,7 @@ const TaskCard = (props: any) => {
   };
 
   const handleClickDelete = (columnId: string) => {
-    setIsDelete(true);
+    setRemove(true);
     setActivePitch(columnId);
     setActiveTask(task.taskId);
     setModalOpen(!openModal);

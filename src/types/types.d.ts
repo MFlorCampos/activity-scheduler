@@ -1,14 +1,14 @@
 declare type TaskContextType = {
   state: {
     modalOpen: boolean;
-    isDelete: boolean;
+    remove: boolean;
     tasks: PitchesType[] | any;
     activePitch: string;
     activeTask: string;
   };
   actions: {
     setModalOpen: (val: boolean) => void;
-    setIsDelete: (val: boolean) => void;
+    setRemove: (val: boolean) => void;
     setTasks: (val: PitchesType[]) => void;
     setActivePitch: (val: string) => void;
     setActiveTask: (val: string) => void;
@@ -26,5 +26,4 @@ declare type TasksType = {
   type: string;
   asignee: string;
   date: string;
-  //weather: 'Temperature: 21ºC. Precipitation: 70%',
 };

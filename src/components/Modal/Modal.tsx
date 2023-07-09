@@ -6,45 +6,50 @@ import {
   useTasks,
   useActiveTask,
   useSetActiveTask,
-  useIsDelete,
-  useSetIsDelete,
-} from '@/contexts/hooks';
-import './Modal.scss';
+  useRemove,
+  useSetRemove,
+} from "@/contexts/hooks";
+import "./Modal.scss";
 
-import { useEffect, useState, MouseEvent } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+import { useEffect, useState, MouseEvent } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Modal = () => {
-  const tasks = useTasks();
   const setTasks = useSetTasks();
+  const setActiveTask = useSetActiveTask();
+  const setModalOpen = useSetModalOpen();
+  const setRemove = useSetRemove();
 
   const activePitch = usePitch();
-
+  const tasks = useTasks();
   const activeTask = useActiveTask();
-  const setActiveTask = useSetActiveTask();
-
   const openModal = useOpenModal();
-  const setModalOpen = useSetModalOpen();
-
-  const isDelete = useIsDelete();
-  const setIsDelete = useSetIsDelete();
+  const remove = useRemove();
 
   const [disabled, setDisabled] = useState(true);
-
   const [startDate, setStartDate] = useState(new Date());
-  const isSelectedDateInFuture = +startDate > +new Date();
+  const [performer, setPerformer] = useState("");
+  const [activity, setActivity] = useState("");
 
+  const isSelectedDateInFuture = +startDate > +new Date();
   const date = new Date();
+  const findColumn = tasks.find((task: PitchesType) => task.id === activePitch);
+  const columnTasks = findColumn && findColumn.tasks;
+  const indexTask =
+    columnTasks &&
+    columnTasks.findIndex((task: TasksType) => task.taskId === activeTask);
+  const indexColumn = tasks.findIndex(
+    (pitches: PitchesType) => pitches.id === activePitch
+  );
+
   let currentMins = date.getMinutes();
   let currentHour = date.getHours();
+
   if (isSelectedDateInFuture) {
     currentHour = 0;
     currentMins = 0;
   }
-
-  const [activity, setActivity] = useState('');
-  const [performer, setPerformer] = useState('');
 
   useEffect(() => {
     if (openModal) {
@@ -63,22 +68,13 @@ const Modal = () => {
   const resetData = () => {
     setDisabled(true);
     setModalOpen(false);
-    setActivity('');
-    setPerformer('');
+    setActivity("");
+    setPerformer("");
     setStartDate(new Date());
-    setIsDelete(false);
+    setRemove(false);
 
-    setActiveTask('');
+    setActiveTask("");
   };
-
-  const findColumn = tasks.find((task: PitchesType) => task.id === activePitch);
-  const columnTasks = findColumn && findColumn.tasks;
-  const indexTask =
-    columnTasks &&
-    columnTasks.findIndex((task: TasksType) => task.taskId === activeTask);
-  const indexColumn = tasks.findIndex(
-    (pitches: PitchesType) => pitches.id === activePitch
-  );
 
   const handleClickDelete = () => {
     const newTask = [...tasks];
@@ -138,7 +134,7 @@ const Modal = () => {
 
     if (findDate.length > 0) {
       alert(
-        'There is another activity scheduled at the same time, please select another date/time'
+        "There is another activity scheduled at the same time, please select another date/time"
       );
     } else {
       const newTask = [...tasks];
@@ -164,7 +160,7 @@ const Modal = () => {
     resetData();
   };
 
-  const handleOnClick = activeTask != '' ? editTasks : saveNewCard;
+  const handleOnClick = activeTask != "" ? editTasks : saveNewCard;
 
   const handleClickSave = () => {
     handleOnClick();
@@ -181,7 +177,7 @@ const Modal = () => {
             <button className="modalClose" onClick={handleClickClose}>
               &times;
             </button>
-            {!isDelete ? (
+            {!remove ? (
               <>
                 <p>Add new task</p>
                 <label>Choose a activity:</label>
@@ -189,7 +185,7 @@ const Modal = () => {
                   name="performers"
                   id="performer-select"
                   value={activity}
-                  onChange={e => setActivity(e.target.value)}
+                  onChange={(e) => setActivity(e.target.value)}
                 >
                   <option value="" disabled>
                     Please choose an option
@@ -202,7 +198,7 @@ const Modal = () => {
                 <p>Date</p>
                 <div className="modalDate">
                   <DatePicker
-                    dateFormat={'yyyy-mm-dd  hh:mm'}
+                    dateFormat={"yyyy-mm-dd  hh:mm"}
                     showTimeSelect
                     selected={startDate}
                     minDate={new Date()}
@@ -220,7 +216,7 @@ const Modal = () => {
                   name="performers"
                   id="performer-select"
                   value={performer}
-                  onChange={e => setPerformer(e.target.value)}
+                  onChange={(e) => setPerformer(e.target.value)}
                 >
                   <option value="" disabled>
                     Please choose an option

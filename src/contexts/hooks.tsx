@@ -1,7 +1,7 @@
-import TaskContext from './index';
-import { useContext } from 'react';
+import TaskContext from "./index";
+import { useContext } from "react";
 
-export function useOpenModal(): TaskContextType['state']['modalOpen'] {
+export function useOpenModal(): TaskContextType["state"]["modalOpen"] {
   const {
     state: { modalOpen },
   } = useContext(TaskContext);
@@ -9,15 +9,15 @@ export function useOpenModal(): TaskContextType['state']['modalOpen'] {
   return modalOpen;
 }
 
-export function useIsDelete(): TaskContextType['state']['isDelete'] {
+export function useRemove(): TaskContextType["state"]["remove"] {
   const {
-    state: { isDelete },
+    state: { remove },
   } = useContext(TaskContext);
 
-  return isDelete;
+  return remove;
 }
 
-export function useTasks(): TaskContextType['state']['tasks'] {
+export function useTasks(): TaskContextType["state"]["tasks"] {
   const {
     state: { tasks },
   } = useContext(TaskContext);
@@ -25,7 +25,7 @@ export function useTasks(): TaskContextType['state']['tasks'] {
   return tasks;
 }
 
-export function usePitch(): TaskContextType['state']['activePitch'] {
+export function usePitch(): TaskContextType["state"]["activePitch"] {
   const {
     state: { activePitch },
   } = useContext(TaskContext);
@@ -33,7 +33,7 @@ export function usePitch(): TaskContextType['state']['activePitch'] {
   return activePitch;
 }
 
-export function useActiveTask(): TaskContextType['state']['activeTask'] {
+export function useActiveTask(): TaskContextType["state"]["activeTask"] {
   const {
     state: { activeTask },
   } = useContext(TaskContext);
@@ -41,7 +41,7 @@ export function useActiveTask(): TaskContextType['state']['activeTask'] {
   return activeTask;
 }
 
-export function useSetActiveTask(): TaskContextType['actions']['setActiveTask'] {
+export function useSetActiveTask(): TaskContextType["actions"]["setActiveTask"] {
   const {
     actions: { setActiveTask },
   } = useContext(TaskContext);
@@ -49,7 +49,7 @@ export function useSetActiveTask(): TaskContextType['actions']['setActiveTask'] 
   return setActiveTask;
 }
 
-export function useSetPitch(): TaskContextType['actions']['setActivePitch'] {
+export function useSetPitch(): TaskContextType["actions"]["setActivePitch"] {
   const {
     actions: { setActivePitch },
   } = useContext(TaskContext);
@@ -57,22 +57,22 @@ export function useSetPitch(): TaskContextType['actions']['setActivePitch'] {
   return setActivePitch;
 }
 
-export function useSetModalOpen(): TaskContextType['actions']['setModalOpen'] {
+export function useSetModalOpen(): TaskContextType["actions"]["setModalOpen"] {
   const {
     actions: { setModalOpen },
   } = useContext(TaskContext);
 
   return setModalOpen;
 }
-export function useSetIsDelete(): TaskContextType['actions']['setIsDelete'] {
+export function useSetRemove(): TaskContextType["actions"]["setRemove"] {
   const {
-    actions: { setIsDelete },
+    actions: { setRemove },
   } = useContext(TaskContext);
 
-  return setIsDelete;
+  return setRemove;
 }
 
-export function useSetTasks(): TaskContextType['actions']['setTasks'] {
+export function useSetTasks(): TaskContextType["actions"]["setTasks"] {
   const {
     actions: { setTasks },
   } = useContext(TaskContext);

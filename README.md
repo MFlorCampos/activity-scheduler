@@ -51,6 +51,7 @@ The user has the ability to:
 
 ### ⚡️ What improvements or new features would you add if you had more time to work on the problem?
 
+- Entry point page.tsx is loaded with 'use client' on top, canceling the ssr. To avoid this components with too much javascript (ones making use of react hooks) should be imported dynamically and we should add a suspense as a preload.
 - Split CSS into different bundles (right now is one for both mobile/desktop)
 - Add tests !!!
 - Fix some missing types

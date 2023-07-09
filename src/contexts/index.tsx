@@ -4,11 +4,11 @@ import {
   PropsWithChildren,
   useEffect,
   useState,
-} from 'react';
-const INDEXLOCALSTORAGE = 'tasks';
+} from "react";
+const INDEXLOCALSTORAGE = "tasks";
 const loadDataFromLocalStorage = () => {
   try {
-    return JSON.parse(localStorage.getItem(INDEXLOCALSTORAGE) || '[]');
+    return JSON.parse(localStorage.getItem(INDEXLOCALSTORAGE) || "[]");
   } catch {
     return {};
   }
@@ -16,9 +16,9 @@ const loadDataFromLocalStorage = () => {
 
 const TaskContext = createContext({} as TaskContextType);
 
-const TaskProvider: FC<PropsWithChildren> = props => {
+const TaskProvider: FC<PropsWithChildren> = (props) => {
   useEffect(() => {
-    if (typeof localStorage !== 'undefined') {
+    if (typeof localStorage !== "undefined") {
       const lsData = loadDataFromLocalStorage();
 
       if (lsData && lsData.length > 0) {
@@ -29,36 +29,36 @@ const TaskProvider: FC<PropsWithChildren> = props => {
 
   const [tasks, setTasks] = useState<PitchesType[]>([
     {
-      id: 'column_1',
-      title: 'Pitch 1',
+      id: "column_1",
+      title: "Pitch 1",
       tasks: [],
     },
     {
-      id: 'column_2',
-      title: 'Pitch 2',
+      id: "column_2",
+      title: "Pitch 2",
       tasks: [],
     },
     {
-      id: 'column_3',
-      title: 'Pitch 3',
+      id: "column_3",
+      title: "Pitch 3",
       tasks: [],
     },
   ]);
 
   const [modalOpen, setModalOpen] = useState<boolean>(false);
 
-  const [isDelete, setIsDelete] = useState<boolean>(false);
+  const [remove, setRemove] = useState<boolean>(false);
 
-  const [activePitch, setActivePitch] = useState<string>('');
+  const [activePitch, setActivePitch] = useState<string>("");
 
-  const [activeTask, setActiveTask] = useState<string>('');
+  const [activeTask, setActiveTask] = useState<string>("");
   const handleSetTasks = async (tasks: any) => {
     await localStorage.setItem(INDEXLOCALSTORAGE, JSON.stringify(tasks));
     setTasks(tasks);
   };
   const actions = {
     setModalOpen,
-    setIsDelete,
+    setRemove,
     setTasks: handleSetTasks,
     setActivePitch,
     setActiveTask,
@@ -66,7 +66,7 @@ const TaskProvider: FC<PropsWithChildren> = props => {
 
   const state = {
     modalOpen,
-    isDelete,
+    remove,
     tasks,
     activePitch,
     activeTask,
