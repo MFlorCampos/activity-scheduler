@@ -1,0 +1,28 @@
+.columns {
+  display: flex;
+
+  .container:nth-child(-n + 2) {
+    border-right: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  }
+
+  .container {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+  }
+
+  div h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .columns {
+    display: block;
+
+    .container:nth-child(-n + 2) {
+      border: unset;
+    }
+  }
+}

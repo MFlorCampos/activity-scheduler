@@ -1,0 +1,76 @@
+.card {
+  position: relative;
+  padding: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(var(--card-border-rgb), 0);
+  transition: background 200ms, border 200ms;
+  background-color: #f1f5f9;
+  margin-bottom: 2rem;
+
+  .cardEdit {
+    background-color: unset;
+    border: none;
+  }
+
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .divider {
+    display: inline-block;
+    transition: transform 200ms;
+    --tw-border-opacity: 1;
+    border-color: rgb(226 232 240 / var(--tw-border-opacity));
+    border-style: dashed;
+    width: 100%;
+  }
+
+  h4 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    padding-bottom: 1rem;
+    opacity: 0.6;
+    line-height: 1.5;
+    max-width: 30ch;
+  }
+}
+
+.footerCard {
+  display: flex;
+  p {
+    width: 85%;
+  }
+}
+
+.icons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    --tw-shadow-color: #cbd5e1;
+    --tw-shadow: var(--tw-shadow-colored);
+    box-shadow: 0 0 #0000, 0 0 #0000, var(--tw-shadow);
+    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+      0 4px 6px -4px var(--tw-shadow-color);
+  }
+
+  .addtask:hover {
+    background-color: #7c3aed;
+  }
+
+  .editLogo:hover {
+    opacity: 40%;
+  }
+
+  .deleteLogo:hover {
+    opacity: 40%;
+  }
+}

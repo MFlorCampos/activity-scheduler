@@ -1,0 +1,27 @@
+.weatherContainer {
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(var(--card-border-rgb), 0);
+  transition: background 200ms, border 200ms;
+  background-color: #f1f5f9;
+  padding: 1rem;
+  font-size: 0.8rem;
+  width: 50%;
+
+  .weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .weatherCondition {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .weatherContainer {
+    width: 100%;
+  }
+}
