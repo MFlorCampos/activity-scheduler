@@ -9,13 +9,11 @@
 
 ## Getting Started
 
-First, run the development server:
+To run the development server:
 
 ```bash
 npm run dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ### 📁 About the scaffolding
 
@@ -48,8 +46,8 @@ The user has the ability to:
 
 ### ⚡️ What libraries did you use? What are they used for? Why did you choose them specifically?
 
-- Next Js -
-- React Date Picker - to easily resolve the date/time picker
+- Next Js - Is the default method recommended in the react [documentation](https://react.dev/learn/start-a-new-react-project) as it provides access to the most commonly used featueres that any site might need.
+- React Date Picker - To easily resolve the date/time picker
 
 ### ⚡️ What improvements or new features would you add if you had more time to work on the problem?
 
@@ -58,11 +56,19 @@ The user has the ability to:
 - Fix some missing types
 - Add a cache to store the api response to reduce the loding time
 - Improve the performance of the Modal Component (I feel I have a lot to work on there)
-- Abstract the api call to a service with proper tests
+- Abstract the api call to a service
+- Have an API to store thhe data instead of using the device local storage
 
 ### ⚡️ Which parts did you find most difficult and which parts did you spend the most time with?
 
+I lost most time that i like to admit implementing the date picker and formatting the date.
+
 ### ⚡️ What are key things to consider when deploying this application for customer use/production?
+
+Things to consider before deploying this application for production:
+
+- My applicacion has serverside rendering.
+- We're using the local storage to store the data so it will not be lost o deleted fron the device.
 
 ### Feedback:
 
