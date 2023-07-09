@@ -79,4 +79,4 @@ When I read the statement for the first time I understood that I should show the
 
 ### suggestions or improvements:
 
-I would like to investigate more about the weather api and see if I can show the weather for each of the activities.
+I would like to investigate more about the weather api and see if I can show the weather for each of the activities, it could be a good exercise.
