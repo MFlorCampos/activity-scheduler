@@ -48,10 +48,17 @@ The user has the ability to:
 
 ### ⚡️ What libraries did you use? What are they used for? Why did you choose them specifically?
 
+- Next Js -
+- React Date Picker - to easily resolve the date/time picker
+
 ### ⚡️ What improvements or new features would you add if you had more time to work on the problem?
 
 - Split CSS into different bundles (right now is one for both mobile/desktop)
 - Add tests !!!
+- Fix some missing types
+- Add a cache to store the api response to reduce the loding time
+- Improve the performance of the Modal Component (I feel I have a lot to work on there)
+- Abstract the api call to a service with proper tests
 
 ### ⚡️ Which parts did you find most difficult and which parts did you spend the most time with?
 
@@ -61,4 +68,9 @@ The user has the ability to:
 
 ### How did you find the challenge overall? Did you have any issues or have difficulties completing?
 
+I had fun doing it and I found it very dynamic, I would liked to have more time to perfect it, but I'll continue improving it for myself.
+When I read the statement for the first time I understood that I should show the weather for each of the activities but then I found that it's not possible to get weather by date in that API, so I decided to show the current weather in a card.
+
 ### suggestions or improvements:
+
+I would like to investigate more about the weather api and see if I can show the weather for each of the activities.
