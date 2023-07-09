@@ -1,4 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🧑‍💻 Maria Florencia Campos
+
+### Frontend Engineer Application
+
+### 🔧 Tech stack used:
+
+- ⚛️ **Next Js / React Js / Typescript**
+- 💄 **Sass** for styles
 
 ## Getting Started
 
@@ -6,29 +13,52 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 📁 About the scaffolding
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+I decided to go with the typical `src/components` scaffolding, then inside of each component I added 2 files:
 
-## Learn More
+- The actual component, in a named `.tsx` file.
+- The styles for this component, in a `.scss` file.
 
-To learn more about Next.js, take a look at the following resources:
+There are some other folders inside of src:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- The `context` folder contains the context/provider with its actions and hooks.
+- A `types` folder containing some types that were used in multiple files across the project.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 🎨 The styles
 
-## Deploy on Vercel
+I tried to stick with the **BEM** naming convention.
+I kept some general rules and mixins inside of `src/app/page.scss`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 📝 How it works
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This is an web app in which a user can easily schedule activities by clicking on the purple buttons and selecting the chosen information.
+The information is saved in the local storage so that when the page is reloaded, the data of the already scheduled activities is still saved.
+The user has the ability to:
+
+- Create new tasks
+- Edit existing tasks
+- Delete tasks.
+
+### Follow Up Questions
+
+### ⚡️ What libraries did you use? What are they used for? Why did you choose them specifically?
+
+### ⚡️ What improvements or new features would you add if you had more time to work on the problem?
+
+- Split CSS into different bundles (right now is one for both mobile/desktop)
+- Add tests !!!
+
+### ⚡️ Which parts did you find most difficult and which parts did you spend the most time with?
+
+### ⚡️ What are key things to consider when deploying this application for customer use/production?
+
+### Feedback:
+
+### How did you find the challenge overall? Did you have any issues or have difficulties completing?
+
+### suggestions or improvements:
