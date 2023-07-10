@@ -94,49 +94,62 @@
 }
 
 @media (hover: hover) {
-  .modalClose:hover,
-  .modalClose:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
+  .modal {
+    .modalContent {
+      .modalContentContainer {
+        .modalClose:hover,
+        .modalClose:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+        }
 
-  .modalDeleteBtn:hover {
-    background-color: #7c3aed;
-  }
+        .modalDeleteBtn:hover {
+          background-color: #7c3aed;
+        }
 
-  .modalSave:hover {
-    background-color: #7c3aed;
-  }
+        .modalSave:hover {
+          background-color: #7c3aed;
+        }
 
-  .modal .modalContent .modalContentContainer {
-    select:focus-visible {
-      outline: none;
-      border: 2px solid #fff;
-    }
+        select:hover {
+          border: 2px solid #7c3aed;
+        }
 
-    select:hover {
-      border: 2px solid #7c3aed;
-    }
+        select:focus {
+          border: 2px solid #7c3aed;
+        }
 
-    select:focus {
-      border: 2px solid #7c3aed;
-    }
+        .performers:focus-visible {
+          outline: none;
+          border: 2px solid #7c3aed;
+        }
 
-    input:focus-visible {
-      outline: none;
-      border: 2px solid #fff;
-    }
+        input:focus-visible {
+          outline: none;
+          border: 2px solid #7c3aed;
+        }
 
-    input:hover {
-      border: 2px solid #7c3aed;
+        input:hover {
+          border: 2px solid #7c3aed;
+        }
+      }
     }
   }
 }
-
 /* Mobile */
 @media (max-width: 480px) {
-  .modalContent {
-    width: 85%;
+  .modal {
+    .modalContent {
+      width: 85%;
+
+      .modalContentContainer {
+        select:focus-visible,
+        input:focus-visible {
+          outline: none;
+          border: 2px solid #7c3aed;
+        }
+      }
+    }
   }
 }

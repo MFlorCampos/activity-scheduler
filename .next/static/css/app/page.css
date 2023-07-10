@@ -250,21 +250,17 @@
 }
 
 @media (hover: hover) {
-  .modalClose:hover,
-  .modalClose:focus {
+  .modal .modalContent .modalContentContainer .modalClose:hover,
+  .modal .modalContent .modalContentContainer .modalClose:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
   }
-  .modalDeleteBtn:hover {
+  .modal .modalContent .modalContentContainer .modalDeleteBtn:hover {
     background-color: #7c3aed;
   }
-  .modalSave:hover {
+  .modal .modalContent .modalContentContainer .modalSave:hover {
     background-color: #7c3aed;
-  }
-  .modal .modalContent .modalContentContainer select:focus-visible {
-    outline: none;
-    border: 2px solid #fff;
   }
   .modal .modalContent .modalContentContainer select:hover {
     border: 2px solid #7c3aed;
@@ -272,9 +268,13 @@
   .modal .modalContent .modalContentContainer select:focus {
     border: 2px solid #7c3aed;
   }
+  .modal .modalContent .modalContentContainer .performers:focus-visible {
+    outline: none;
+    border: 2px solid #7c3aed;
+  }
   .modal .modalContent .modalContentContainer input:focus-visible {
     outline: none;
-    border: 2px solid #fff;
+    border: 2px solid #7c3aed;
   }
   .modal .modalContent .modalContentContainer input:hover {
     border: 2px solid #7c3aed;
@@ -282,8 +282,13 @@
 }
 /* Mobile */
 @media (max-width: 480px) {
-  .modalContent {
+  .modal .modalContent {
     width: 85%;
+  }
+  .modal .modalContent .modalContentContainer select:focus-visible,
+  .modal .modalContent .modalContentContainer input:focus-visible {
+    outline: none;
+    border: 2px solid #7c3aed;
   }
 }
 /*!***************************************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -1087,8 +1092,5 @@
   }
   .main {
     padding: 1rem;
-  }
-  .modalContent {
-    width: 85%;
   }
 }
