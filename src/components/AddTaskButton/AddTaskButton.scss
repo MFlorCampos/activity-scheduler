@@ -1,7 +1,23 @@
-.addtask {
+.addTask {
   padding: 1rem;
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border: 2px solid rgba(var(--callout-border-rgb), 0.3);
   border-radius: var(--border-radius);
   background-color: #9500f0;
   width: 100%;
+}
+
+@media (hover: hover) {
+  .addTask:focus-visible {
+    outline: none;
+    border: 2px solid #7c3aed;
+  }
+
+  .addTask:hover {
+    border: 2px solid #7c3aed;
+    background-color: #7c3aed;
+  }
+
+  .addTask:focus {
+    border: 2px solid #7c3aed;
+  }
 }

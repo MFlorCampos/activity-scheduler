@@ -43,9 +43,13 @@ const Modal = () => {
     (pitches: PitchesType) => pitches.id === activePitch
   );
 
+  const isSelectedDateToday = new Date().getDate() === startDate.getDate();
+
+  let minTimeHour = new Date().getHours();
+  if (!isSelectedDateToday) minTimeHour = 0;
+
   let currentMins = date.getMinutes();
   let currentHour = date.getHours();
-
   if (isSelectedDateInFuture) {
     currentHour = 0;
     currentMins = 0;
@@ -101,7 +105,7 @@ const Modal = () => {
     const newEditTask = [...findColumn.tasks];
 
     newEditTask[indexTask].type = activity;
-    newEditTask[indexTask].date = startDate.toISOString();
+    newEditTask[indexTask].date = startDate.toString();
     newEditTask[indexTask].asignee = performer;
 
     if (findColumn) {
@@ -179,7 +183,7 @@ const Modal = () => {
             </button>
             {!remove ? (
               <>
-                <p>Add new task</p>
+                {activeTask ? <p>Edit task</p> : <p>Add new task</p>}
                 <label>Choose a activity:</label>
                 <select
                   name="performers"
@@ -198,7 +202,7 @@ const Modal = () => {
                 <p>Date</p>
                 <div className="modalDate">
                   <DatePicker
-                    dateFormat={"yyyy-mm-dd  hh:mm"}
+                    dateFormat={"yyyy-MM-dd hh:mm"}
                     showTimeSelect
                     selected={startDate}
                     minDate={new Date()}

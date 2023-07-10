@@ -16,7 +16,7 @@ const AddTaskButton = (props: any) => {
   };
 
   return (
-    <button type="button" className="addtask" onClick={handleClickOpen}>
+    <button type="button" className="addTask" onClick={handleClickOpen}>
       <Image src={PlusIcon.src} alt="Add Icon" width={15} height={15} />
     </button>
   );
