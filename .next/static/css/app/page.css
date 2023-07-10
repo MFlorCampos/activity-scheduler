@@ -132,6 +132,9 @@
   .columns .container:nth-child(-n+2) {
     border: unset;
   }
+  .columns .container {
+    padding: 0 0 2rem 0;
+  }
 }
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[3].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[3].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[3].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[3].oneOf[13].use[5]!./src/components/Weather/Weather.scss ***!
@@ -1091,6 +1094,6 @@
     display: block;
   }
   .main {
-    padding: 1rem;
+    padding: 2rem;
   }
 }

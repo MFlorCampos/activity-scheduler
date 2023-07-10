@@ -24,5 +24,9 @@
     .container:nth-child(-n + 2) {
       border: unset;
     }
+
+    .container {
+      padding: 0 0 2rem 0;
+    }
   }
 }
