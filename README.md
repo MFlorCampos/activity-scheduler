@@ -1,6 +1,14 @@
 # 👩‍💻 Maria Florencia Campos
 
-### Frontend Engineer Application
+### 📝 How it works
+
+This is an web app in which a user can easily schedule activities by clicking on the purple buttons and selecting the chosen information.
+The information is saved in the local storage so that when the page is reloaded, the data of the already scheduled activities is still saved.
+The user has the ability to:
+
+- Create new tasks
+- Edit existing tasks
+- Delete tasks.
 
 ### 🔧 Tech stack used:
 
@@ -32,17 +40,7 @@ There are some other folders inside of src:
 I tried to stick with the **BEM** naming convention.
 I kept some general rules and mixins inside of `src/app/page.scss`
 
-### 📝 How it works
-
-This is an web app in which a user can easily schedule activities by clicking on the purple buttons and selecting the chosen information.
-The information is saved in the local storage so that when the page is reloaded, the data of the already scheduled activities is still saved.
-The user has the ability to:
-
-- Create new tasks
-- Edit existing tasks
-- Delete tasks.
-
-### Follow Up Questions
+### Aditional info
 
 ### ⚡️ What libraries did you use? What are they used for? Why did you choose them specifically?
 
